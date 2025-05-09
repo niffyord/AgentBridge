@@ -45,7 +45,7 @@ export default function Home() {
        {/* ──────────────────  Hero Section  ────────────────── */}
        <section className="relative flex flex-col items-center justify-center w-full min-h-[80vh] overflow-hidden">
           {/* Background texture */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-navy/40 via-navy/10 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-navy/30 via-navy/5 to-transparent pointer-events-none" />
 
           {/* Decorative blobs */}
           <div className="absolute -top-40 -left-40 w-[820px] h-[820px] bg-gradient-to-br from-cyan/30 to-teal/30 rounded-full filter blur-3xl" />
@@ -90,7 +90,7 @@ export default function Home() {
   {/* Primary: radiant gradient pill */}
   <a
     href="#contact"
-    className="group relative inline-flex items-center overflow-hidden rounded-full bg-gradient-to-r from-accent to-accent-light px-10 py-3 font-semibold text-surface shadow-[0_6px_24px_-6px_rgba(164,99,255,0.45)] transition-transform duration-200 hover:scale-[1.04] active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+    className="group relative inline-flex items-center overflow-hidden rounded-full bg-gradient-to-r from-accent to-accent-light px-10 py-3 font-semibold text-surface shadow-lg transition-transform duration-200 hover:scale-[1.04] active:scale-95 focus:outline-none"
   >
     <span className="relative z-10">Request a Demo</span>
     <span className="inline-flex items-center justify-center rounded-full bg-gradient-to-br from-accent/30 to-accent-light/20 p-1 shadow">
@@ -104,7 +104,7 @@ export default function Home() {
   {/* Secondary: glass-outline pill */}
   <a
     href="#solutions"
-    className="inline-flex items-center rounded-full border border-accent px-8 py-3 font-semibold text-accent transition-all duration-200 hover:bg-accent-light/10 hover:shadow-[0_0_0_3px_rgba(164,99,255,0.25)] active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+    className="inline-flex items-center rounded-full border border-accent/30 px-8 py-3 font-semibold text-accent transition-colors duration-200 hover:bg-accent-light/10 hover:border-accent active:scale-95 focus:outline-none"
   >
     Try Samples
   </a>
@@ -123,7 +123,7 @@ export default function Home() {
               alt="AgentBridge dashboard preview"
               width={1920}
               height={1080}
-              className="w-full rounded-3xl shadow-2xl ring-1 ring-white/10"
+              className="w-full rounded-3xl shadow-2xl"
             />
           </motion.div>
 
@@ -243,7 +243,7 @@ export default function Home() {
         </span>
 
         {/* title */}
-        <h3 className="relative z-10 mb-2 text-center text-xl font-bold text-primary sm:text-2xl">
+        <h3 className="relative z-10 mb-2 text-center text-xl sm:text-2xl font-bold text-primary">
           {item.title}
         </h3>
 
@@ -440,8 +440,8 @@ export default function Home() {
           href={p.link}
           className={
             p.name === "Pilot Package"
-              ? "group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-accent to-accent-light px-7 sm:px-8 py-3 font-semibold text-surface shadow-[0_6px_18px_-4px_rgba(164,99,255,0.45)] transition-transform duration-200 hover:scale-[1.04] active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
-              : "group relative inline-flex items-center justify-center rounded-full border border-accent px-7 sm:px-8 py-3 font-semibold text-accent transition-all duration-200 hover:bg-accent-light/10 hover:shadow-[0_0_0_3px_rgba(164,99,255,0.25)] active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+              ? "group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-accent to-accent-light px-7 sm:px-8 py-3 font-semibold text-surface shadow-lg transition-transform duration-200 hover:scale-[1.03] active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
+              : "group relative inline-flex items-center justify-center rounded-full border border-accent/30 px-7 sm:px-8 py-3 font-semibold text-accent transition-all duration-200 hover:bg-accent-light/10 hover:shadow-[0_0_0_3px_rgba(164,99,255,0.25)] active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent"
           }
         >
           <span className="relative z-10">{p.cta}</span>
