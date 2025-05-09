@@ -42,7 +42,7 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 w-full border-b border-accent/30 bg-surface-2/80 backdrop-blur-md shadow-lg">
+    <nav className="fixed inset-x-0 top-0 z-50 w-full bg-surface-2/80 backdrop-blur-md shadow-lg">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-4">
         {/* logo */}
         <Link href="/" className="flex items-center gap-3 z-60">
@@ -71,7 +71,7 @@ export default function Navbar() {
         <button
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
-          className="relative z-60 flex h-12 w-12 items-center justify-center md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          className="relative z-60 flex h-12 w-12 items-center justify-center md:hidden focus:outline-none "
         >
           {open ? (
             <X className="h-8 w-8 text-accent transition-all duration-200" strokeWidth={2.4} />
@@ -107,7 +107,7 @@ export default function Navbar() {
             <Link
               href="#contact"
               onClick={() => setOpen(false)}
-              className="inline-flex w-full items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-surface transition-colors duration-200 hover:bg-accent-light focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="inline-flex w-full items-center justify-center rounded-full bg-accent px-6 py-3 font-semibold text-surface transition-colors duration-200 hover:bg-accent-light focus:outline-none "
             >
               Contact
             </Link>
