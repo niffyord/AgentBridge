@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+/* ─────────── CSS Variable Palette ─────────── */
+:root {
+  /* Core surface & text */
+  --bg-surface:   #151029;
+  --bg-surface-2: #201842;
+  --text-primary: #D8DAFF;
+  --text-muted:   #9CA0D9;
+
+  /* Accent colours */
+  --accent:        #A463FF;
+  --accent-light:  #C59CFF;
+  --accent-edge:   #FF4FAD;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-surface:   #120D22;
+    --bg-surface-2: #1B1435;
+    --text-primary: #E6E8FF;
+  }
+}
+
+/* ─────────── Utility backgrounds ─────────── */
+.bg-fancy-gradient {
+  background: linear-gradient(
+    180deg,
+    #18122B 0%,
+    #241859 35%,
+    #864CFF 65%,
+    #151029 100%
+  );
+}
+
+/* ─────────── Link underline animation ─────────── */
+.nav-link-underline {
+  position: relative;
+}
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  width: 0;
+  transition: width .3s;
+}
+.nav-link-underline:hover::after { width: 100%; }
+
+/* ─────────── Fade-in helper ─────────── */
+@keyframes fadeInUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.animate-fade-in-up { animation: fadeInUp .8s ease-out forwards; }
+
+/* ─────────── Global typography & smoothing ─────────── */
+body {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-family: var(--font-primary), var(--font-geist-mono), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ────────────── Accessibility: skip to content ────────────── */
+.skip-link {
+  position: absolute;
+  left: -1000px;
+  top: 8px;
+  background: var(--accent);
+  color: var(--bg-surface);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  z-index: 10000;
+  font-weight: 700;
+  transition: left 0.2s;
+}
+.skip-link:focus {
+  left: 16px;
+  outline: 3px solid var(--accent-light);
+}
+
+/* ────────────── Microinteractions ────────────── */
+a, button, .nav-link-underline, [role="button"] {
+  transition: color 0.18s, background 0.18s, border 0.18s, box-shadow 0.18s, transform 0.18s;
+}
+
+button, [role="button"], .nav-link-underline {
+  outline: none;
+}
+button:focus-visible, [role="button"]:focus-visible, .nav-link-underline:focus-visible {
+  outline: 2.5px solid var(--accent-light);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--accent-light), 0 0 0 4px var(--accent);
+}
+
+/* Card hover and focus effect */
+.card, .group:hover .card, .group:focus-within .card {
+  transition: box-shadow 0.22s cubic-bezier(.4,0,.2,1), transform 0.22s cubic-bezier(.4,0,.2,1);
+}
+.card:hover, .card:focus-within {
+  box-shadow: 0 12px 44px -10px rgba(164,99,255,0.22), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+  transform: translateY(-4px) scale(1.012);
+}
+
+/* ────────────── Whitespace improvements ────────────── */
+section, .section {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+@media (min-width: 640px) {
+  section, .section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/* Card spacing */
+.card, .group .card {
+  margin-bottom: 2.25rem;
+  margin-top: 2.25rem;
+}
+
+
+/* Prevent scroll when mobile nav is open (class toggled in Navbar) */
+@media (max-width: 767px) {
+  html.overflow-hidden,
+  body.overflow-hidden {
+    overflow: hidden;
+  }
+}
+
+/* Mobile menu slide-down (used by Navbar) */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-down { animation: slideDown .25s ease-out; }
